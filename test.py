@@ -41,4 +41,8 @@ try:
     alert.accept()
 
 finally:
+<<<<<<< HEAD
     driver.quit()
+=======
+    driver.quit()
+>>>>>>> a6d49f4f9bf51254ed48dc53d613efb206796e34
