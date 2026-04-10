@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Symbiosis Admission Registration</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    h2 {
+      text-align: center;
+      color: darkblue;
+    }
+  </style>
+
+  <script src="validate.js"></script>
+</head>
+
+<body>
+
+<h2>Symbiosis Admission Registration Form</h2>
+
+<form onsubmit="return validateForm()">
+
+  <label>Name</label>
+  <input type="text" id="name" name="name"><br><br>
+
+  <label>Email ID</label>
+  <input type="email" id="email" name="email"><br><br>
+
+  <label>Password</label>
+  <input type="password" id="password" name="password"><br><br>
+
+  <label>Confirm Password</label>
+  <input type="password" id="confirm" name="confirm"><br><br>
+
+  <label>Gender</label><br>
+  <input type="radio" id="gender-male" name="gender" value="male">
+  <label for="gender-male">Male</label>
+  <input type="radio" id="gender-female" name="gender" value="female">
+  <label for="gender-female">Female</label>
+  <input type="radio" id="gender-other" name="gender" value="other">
+  <label for="gender-other">Other</label>
+
+  <br><br>
+
+  <label>Course</label>
+  <select id="course" name="course">
+    <option value="">Select Course</option>
+    <option value="BTech">BTech</option>
+    <option value="BBA">BBA</option>
+    <option value="BCA">BCA</option>
+    <option value="MBA">MBA</option>
+  </select>
+
+  <br><br>
+
+  <input type="submit" value="Register">
+
+</form>
+
+</body>
+</html>
