@@ -2,19 +2,23 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.chrome.service import Service
-from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.chrome.options import Options
 import os
 
-# Setup Chrome driver (auto-managed)
-driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+# Chrome options (already configured in selenium image)
+options = Options()
+options.add_argument("--headless=new")
+options.add_argument("--no-sandbox")
+options.add_argument("--disable-dev-shm-usage")
+
+# Start driver (NO service, NO chromedriver path needed)
+driver = webdriver.Chrome(options=options)
 
 try:
-    # ✅ FIX: Use relative path (works in Jenkins + local)
+    # Load local HTML file
     file_path = os.path.abspath("index.html")
     driver.get("file:///" + file_path)
 
-    # ✅ Use explicit wait instead of time.sleep
     wait = WebDriverWait(driver, 10)
 
     # Fill form
